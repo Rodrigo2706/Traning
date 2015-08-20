@@ -1,0 +1,316 @@
+Activity #1
+
+First task: copie 5 examples of code where you applied good programing practices.
+
+1) A Java aplication for a dogs door.
+
+/**
+ *
+ * @author Rodrigo
+ * This class is used to recognize a dogs bark.
+ * When it recognizes a bark, it prints the bark and opens the door.
+ */
+public class BarkRecognizer {
+    
+    private DogDoor door;
+    
+    public BarkRecognizer (DogDoor p_door){
+        this.door = p_door;
+    }
+    
+    public void recognize (String p_bark){
+        System.out.println(" BarkRecognizer: Heard a '" + p_bark + "'");
+        door.open();
+    }
+}
+
+2) SQL Code for a database operation
+
+-- Author: Rodrigo
+-- Procedure for adding a user to the database.
+-- Input: 	*Name
+-- 			*Fist last name
+--			*Secong last name
+-- 			*Email
+--			*Password
+--			*Born date
+-- Output: leaves a record of the user in the database.
+DELIMITER //
+
+CREATE PROCEDURE AddUser(p_Name VARCHAR(50),p_LastN1 VARCHAR(50), p_LastN2 VARCHAR(50),p_Email VARCHAR(80),
+								p_Pass VARCHAR(50),p_BornD DATE)
+BEGIN
+
+	INSERT INTO Users (Name, LastName1, LastName2, Email, Password, BornDate, RegisterDate, Enabled) 
+		VALUES (p_Name, p_LastN1, p_LastN2, p_Email, MD5(p_Pass), p_BornD, NOW(), 1);
+        
+END//
+
+DELIMITER ;
+
+
+3) Javascript code for a quiz app developed in a group of 30 people.
+
+/*
+* Author: Rodrigo Navarro Vargas
+* Funcion that checks if a quiz is available or not.
+* A quiz is available if it is in a "inprogress" state,
+* else way it is not available.
+*/
+$scope.noButton = function(){
+	if(this.quiz.state !== 'inprogress'){
+    	return true;
+    }
+};
+
+
+4) Haskell code for tree management
+
+-- 9.2
+-- Author: Rodrigo
+-- Section of code that takes a tree and prints it in preorder mode.
+-- Usage: preorderTree (Node 10 [Node 3 [Node 4 [],Node 7 [] ] ,Node 10 [Node 20, [], Node 30 [], Node 40 [] ] ] )
+preorderTree :: Tree a -> [a]
+preorderTree (Node a []) = [a]
+preorderTree (Node a [left, right]) = [a] ++ (preorderTree left) ++ (preorderTree right)
+
+
+5) ASM code for the 2048 game
+
+; Author: Rodrigo
+; Proc that displays the score in real time.
+; It takes the value for the score variable and prints it character by character
+
+printScore proc near
+		mov ax,0b800h				;Section of code to go the position on the
+        mov es,ax 					;screen where the score is supposed to go
+		xor bx,bx
+		add bx, 260
+
+		lea si, score 		 		;get the score from the variable
+		
+		mov ah, 70h 				;sets the color of the letter to white
+
+rotscore:	
+		mov al,[si] 				;puts what we read to the si
+		mov word ptr es:[bx],ax 	;puts the digit in the screen
+		
+		inc si 						;move on to the next digit
+		inc bx 						;move a space in the screen
+		inc bx
+		
+		mov al,[si] 				
+		cmp al, '$' 				;if the score is finished printing we finish
+		jne rotscore 				;if not we continue printing chars
+		
+		ret
+creaScore endp
+
+
+Secong Task: copie 5 examples of code where you didn't apply good programing practices and correct them.
+
+
+1) Code in Python for a dice game
+Before:
+
+p = 1
+dobs = 0
+a = int (input( "Ingrese la cantidad de lados de los dados: "))
+import random
+d1 = random.randint(1,a)
+d2 = random.randint (1,a)
+while d1 and d2 != 1:
+    if d1==d2:
+        dobs += 1
+    print (p, d1,d2)
+    d1 = random.randint (1,a)
+    d2 = random.randint (1,a)
+    p += 1
+print ("Dobles de 1!!! Obtiviste ojos de serpiente en el paso numero:", p)
+print ("Y obtuviste", dobles, "dobles!!!")
+
+After:
+"""
+Author: Rodrigo
+Program that simulates a dice game
+Funtion:
+		The game throws dices until the two dices get a 1.
+		It also counts how many times did the two dices matched.
+"""
+
+import random
+
+steps = 1
+matches = 0
+numFaces = int (input( "How many faces will the dice have?: "))
+dice1 = random.randint(1,numFaces)
+dice2 = random.randint (1,numFaces)
+
+while dice1 and dice2 != 1:
+    if dice1==dice2:
+        matches += 1
+
+    print ("On step: ", steps, "you got a: ", dice1, "and a:", dice2)
+    
+    dice1 = random.randint (1,numFaces)
+    dice2 = random.randint (1,numFaces)
+    step += 1
+
+print ("Doubles of 1!!! You got the serpents eyes on step: ", steps)
+print ("And you got ", matches, " matches!!!")
+
+
+2) I assume this function had something to do with money.
+
+Before:
+def aplicarDescuento (m,p):
+    d = p/100 * m
+    nm = m - d
+    return nm
+
+After:
+"""
+Author: Rodrigo
+Funtion that applies a discount to a certain money.
+Inputs:
+		*Original money
+		*Percentage of discount to apply
+Output:
+		*Money with the discount applied
+"""
+def applyDiscount (money, percentage):
+	discount = porcentage/100 * money
+	newMoney = money - discount
+	return newMoney
+
+
+3) C++ code for a list.length
+
+Before:
+
+int lista::largoLista(){
+    int c=0;
+
+    pnodo aux;
+    aux = primero;
+    if(ListaVacia()){return c;}
+    else{
+        while(aux!=NULL){
+        aux=aux->siguiente;
+        c++;
+    }
+    return c;
+    }
+}
+
+After:
+
+/*
+* Author: Rodrigo
+* Funtion that returns the length of a list 
+*/
+int list::listLength(){
+    int length=0;
+
+    if(EmptyList()){
+    	return length;}
+
+    pnode auxNode;
+    auxNode = first;
+
+   	while(auxNode!=NULL){
+       	auxNode=auxNode->next;
+       	length++;
+   	}
+
+	return length;
+}
+
+4) Funtion in C++ that checks if the values of a list are odd or even.
+Before:
+
+void lista::par_impar ()
+{
+    pnodo aux;
+    aux = primero;
+    int c = 0;
+    if (ListaVacia())
+        cout <<"La lista esta vacia"<<endl;
+    else
+    {
+        while (aux!=NULL)
+        {
+            if (aux->valor % 2 == 0)
+                cout <<"El nodo "<<c<<"es par."<<endl;
+            else
+                cout <<"El nodo "<<c<<"es impar."<<endl;
+            aux = aux->siguiente;
+        }
+    }
+}
+
+After:
+/*
+*Author: Rodrigo
+* Funtion that goes node by node checking if the value is odd or even.
+*/
+void list::evenOrOdd ()
+{
+    pnode auxNode;
+    auxNode = first;
+    int nodeCount = 0;
+
+    if (EmptyList())
+        cout <<"List is empty"<<endl;
+    else
+    {
+        while (auxNode!=NULL)
+        {
+            if (auxNode->value % 2 == 0)
+                cout <<"Node #"<< c <<"is even."<<endl;
+            else
+                cout <<"Node #"<< c <<"is odd."<<endl;
+            auxNode = auxNode->next;
+        }
+    }
+}
+
+
+5) Funtion in Python for a game called Gravity Master
+Before:
+def update_alt (self,wn):
+        self.timeNum += 1
+        if (self.timeNum == self.timeTarget):
+            if (self.currentImage==0):
+                self.currentImage += 1
+            else:
+                self.currentImage = 0
+            self.timeNum = 0
+        self.render (wn)
+
+After: Quite difficult to know what is going on... but I'll try my best.
+
+"""
+Author: Rodrigo
+Funtion used to change the image of an object to simulate animation.
+Inputs:
+		*The object to change.
+		*The window as to where the object is to be put on.
+Output:
+		*A new image on the window
+"""
+def changeObjectImage (object,window):
+	object.timeNum += 1
+
+    if (object.timeNum == object.timeTarget):
+
+    	if (object.currentImage==0):			#There are only two transitions of the animation
+        	object.currentImage += 1
+        else:
+        	object.currentImage = 0
+
+        object.timeNum = 0
+    object.render (window)
+
+
+End Activity #1
