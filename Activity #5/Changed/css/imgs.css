@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*!
+┬á* All Rights Reserved
+┬á* This software is proprietary information of
+┬á* Intelligent Sense
+┬á* Use is subject to license terms.
+┬á* Filename: imgs.css
+┬á*/
+#logo {
+  width: 180px;
+  height: 40px;
+  float: left; }
+
+#picture {
+  position: relative;
+  width: 343px;
+  height: 305px;
+  margin: 15px 13px 10px 0;
+  background-color: white;
+  border: 10px solid white; }
+  #picture:hover {
+    opacity: 0.9;
+    background-color: transparent;
+    border: 10px solid transparent; }
+
+img {
+  height: auto; }
+
+/*# sourceMappingURL=imgs.css.map */

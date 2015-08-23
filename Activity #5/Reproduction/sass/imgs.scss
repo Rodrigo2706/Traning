@@ -1,0 +1,32 @@
+/*!
+ * All Rights Reserved
+ * This software is proprietary information of
+ * Intelligent Sense
+ * Use is subject to license terms.
+ * Filename: imgs.css
+ */
+
+#logo{
+  width: 180px;
+  height: 40px;
+  float: left;
+}
+
+#picture{
+  position: relative;
+  width: 343px;
+  height: 305px;
+  margin: 15px 13px 10px 0;
+  background-color: white;
+  border: 10px solid white;
+
+  &:hover{
+    opacity: 0.9;
+    background-color: transparent;
+    border: 10px solid transparent;
+  }
+}
+
+img{
+  height: auto;
+}

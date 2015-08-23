@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*!
+┬á* All Rights Reserved
+┬á* This software is proprietary information of
+┬á* Intelligent Sense
+┬á* Use is subject to license terms.
+┬á* Filename: buttons.css
+┬á*/
+.btn {
+  color: white;
+  background-color: black; }
+  .btnhover {
+    opacity: 0.9;
+    color: white; }
+
+/*# sourceMappingURL=buttons.css.map */

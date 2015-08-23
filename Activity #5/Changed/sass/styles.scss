@@ -1,0 +1,294 @@
+/*!
+ * All Rights Reserved
+ * This software is proprietary information of
+ * Intelligent Sense
+ * Use is subject to license terms.
+ * Filename: sytles.css
+ */
+
+.block {
+  background-image:url(../imgs/background.png);
+}
+
+.container{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin:0px;
+}
+
+.row {
+  margin:0 auto;
+  max-width:1140px;
+  min-width:755px;
+  width:100%;
+
+  .menu{
+    width: 45%;
+  }
+  .articles-col{
+    width: 30%
+  }
+  .last-col{
+    width: 100%;
+    float: left;
+  }
+}
+
+.menu, .articles-col{
+  margin-right: 4%;
+  float: left;
+  min-height: 1px;
+}
+
+.article1{
+  margin-bottom: 30px;
+  margin-top: 20px;
+  float: left;
+}
+
+.article2{
+  margin-bottom: 30px;
+  margin-top: 20px;
+  float: left;
+}
+
+.article3{
+  margin-right: 0px;
+  margin-bottom: 10px;
+}
+
+.blk-quot{
+  background: #ededed;
+  border: 1px solid #c8c8c8;
+  color: red;
+  margin-top:20px;
+  margin-bottom:20px;
+  font-weight:bold;
+  padding:16px;
+  width: 100%;
+  margin-left:0;
+}
+
+.foot1{
+  position: absolute;
+  right: 225px;
+  top: 25px;
+  font-size: 15px;
+}
+
+.foot2{
+  position: absolute;
+  left: 225px;
+  top: 25px;
+  font-size: 15px;
+
+  a{
+    text-decoration: underline;
+    color: #c8c8c8;
+  }
+}
+
+body{
+  margin:0 0 1px;
+  height:100%;
+  border-top:10px solid black;
+}
+
+header{
+  position: relative;
+  float:left;
+  width: 100%;
+  height:100px;
+  display: block;
+}
+
+nav{
+  position: absolute;
+  width: 540px;
+  top: 35px;
+  right: 3px;
+  border-top:1px solid #c8c8c8;
+  border-bottom:1px solid #c8c8c8;
+
+  li{
+    float: left;
+    margin-right: 0px;
+    font-size: 17px;
+  }
+
+  ul{
+    margin-top: 10px;
+    list-style-type: none;
+
+    li{
+      float: left;
+      margin-left:10px;
+
+      a{
+        font-weight:normal;
+        display:block;
+        padding-bottom:10px;
+        padding-top:5px;
+        margin-top:5px;
+        margin-right:6px;
+        color: #666666;
+
+        &:hover{
+          color:#c8c8c8;
+          text-decoration:none;
+        }
+      }
+    }
+  }
+}
+
+span{
+  font-size: 25px;
+}
+
+section h3{
+  color:red;
+}
+
+h4{
+  padding-bottom: 30px;
+  border-bottom: 1px solid #c8c8c8;
+
+  a{
+    text-decoration: underline;
+  }
+}
+
+footer{
+  color: white;
+  position:relative;
+  height:100px;
+  clear:both;
+  width:100%;
+  background-color:black;
+}
+
+.lastNews{
+  margin-top: 0px;
+  margin-bottom: 50px;
+
+  h5{
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+    margin-bottom: 30px;
+    padding-top: 20px;
+  }
+
+  h6{
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  h1{
+    font-size:34px;
+    padding:10px;
+  }
+
+  h2{
+    padding:10px;
+  }
+
+  #logo{
+    margin-left:5px;
+  }
+
+  .foot1{
+    position: absolute;
+    right: 90px;
+    top: 25px;
+  }
+
+  .foot2{
+    position: absolute;
+    left: 20px;
+    top: 25px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .row, body, .container {
+    width: 100%;
+    min-width: 0;
+    float:left;
+  }
+
+  .row .menu, .row .articles-col, .row .last-col {
+    width: auto;
+    float: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+}
+
+
+@media (max-width: 600px) {
+   #picture{
+    width: 250px;
+    height: 220px;
+  }
+
+  nav{
+    float: left;
+    margin-top:67px;
+    left: 12px;
+    border:none;
+    width:90%;
+
+    ul{
+      margin: 0px;
+      padding: 0px;
+      float: none;
+
+      li{
+        float: none;
+
+        a{
+          font-size:17px;
+          color:#666666;
+          text-align:left;
+          text-decoration:none;
+          border-bottom: 1px solid #C8C8C8;
+
+          &:hover{
+            color:#c8c8c8;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    margin-top: 300px;
+  }
+
+  .fst-section{
+    width:100%;
+    position: relative;
+    float: left;
+    background:transparent;
+    margin-top:300px;
+    margin-bottom:20px;
+  }
+
+  #logo{
+    margin-left:20px;
+  }
+
+  .foot1{
+    font-size: 15px;
+  }
+
+  .foot2{
+    display: none;
+  }
+}
