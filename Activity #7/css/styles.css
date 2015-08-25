@@ -1,0 +1,64 @@
+/*!
+ * All Rights Reserved
+ * This software is proprietary information of
+ * Intelligent Sense
+ * Use is subject to license terms.
+ * Filename: styles.css
+ */
+
+.title {
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.container .row{
+  width: 550px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 3px solid black;
+}
+
+.handle{
+  margin-top: 100px;
+  margin-left: 40px
+}
+
+#response-wrapper {
+ margin-top: 10px;
+}
+
+.spnShow{
+  display: none;
+}
+
+h1{
+  position: absolute;
+  color: blue !important;
+  right: -40px;
+  top: -20px;
+}
+
+h6{
+  font-size: 15px !important;
+  margin: 20px !important;
+}
+
+img{
+  width: 121px;
+  height: 121px;
+}
+
+span{
+  padding: 2px 23px 2px 23px;
+  background-color: #c8c8c8;
+  border: 2px solid black;
+  position:absolute;
+  bottom: 0px;
+  right: -27px;
+}
+
+a{
+  margin: 100px 0px 100px 10px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+All Rights Reserved
+This software is proprietary information of
+Intelligent Sense
+Use is subject to license terms.
+Filename: index.html
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Activity #7</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="js/handlebars-v3.0.3.js"></script>
+
+</head>
+<body>
+
+<script id="results-template" type="text/x-handlebars-template">
+{{#each this}}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <h1>{{inc @index}}</h1>
+        <img src="{{profileImage}}">
+        <span class="spnHide">Hide</span>
+        <span class="spnShow">Show</span>
+      </div>
+      <div class="details">
+        <div class="col-lg-2 col-lg-offset-1">
+          <h6>Tweets:</h6>
+          <h6>Followers:</h6>
+          <h6>Retweets:</h6>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1">
+          <h6>{{stats.tweets}}</h6>
+          <h6>{{stats.followers}}</h6>
+          <h6>{{stats.retweets}}</h6>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1">
+          <div class="handle">
+            <a href="https://twitter.com/account/redirect_by_id/{{id}}">[handle]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{{/each}}
+</script>
+
+  <div id="results"></div>
+
+</body>
+</html>
