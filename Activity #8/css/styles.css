@@ -1,0 +1,35 @@
+/*!
+ * All Rights Reserved
+ * This software is proprietary information of
+ * Intelligent Sense
+ * Use is subject to license terms.
+ * Filename: styles.css
+ */
+
+.container .row{
+  width: 400px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 3px solid black;
+}
+
+.col-lg-3{
+  margin: 0px;
+  border-left: 5px solid black;
+}
+
+h6{
+  font-size: 15px !important;
+  margin: 20px !important;
+}
+
+img{
+  width: 170px;
+  height: 190px;
+}
+
+a{
+  margin: 0px;
+  border: 1px solid black;
+}

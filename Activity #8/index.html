@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+All Rights Reserved
+This software is proprietary information of
+Intelligent Sense
+Use is subject to license terms.
+Filename: index.html
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Activity #8</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-route.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+  <div ng-app="act#7" ng-controller="profilesCtrl">
+    <a class="col-lg-1" ng-click="filtLetter=''">All</a>
+    <a class="col-lg-1" ng-repeat="letter in letters" ng-click="$parent.filtLetter=letter">{{letter}}</a>
+    </br>
+</br>
+</br>
+    <div class="container" ng-repeat="prof in profiles | filterProfiles:filtLetter">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="{{prof.profileImage}}">
+        </div>
+        <div class="details">
+          <div class="col-lg-3 col-lg-offset-2">
+            <h6>{{prof.name}}</h6>
+            <h6>Tweets: {{prof.stats.tweets}}</h6>
+            <h6>Followers: {{prof.stats.followers}}</h6>
+            <h6>Retweets:{{prof.stats.retweets}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

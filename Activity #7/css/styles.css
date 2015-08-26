@@ -6,12 +6,6 @@
  * Filename: styles.css
  */
 
-.title {
-    font-size: 20px;
-    font-weight: bolder;
-    text-align: center;
-}
-
 .container .row{
   width: 550px;
   margin-top: 20px;
